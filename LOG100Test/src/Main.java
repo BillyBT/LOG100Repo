@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
-        exercice17();
+        exercice07();
 //        int[] tablo1 = new int[]{3, 4, 5, 2, 12, 2};
 //        int[] tablo2 = new int[]{3, 4, 5, 2, 12, 2};
 //        System.out.println(exercice16(tablo1, tablo2));
@@ -149,28 +149,28 @@ public class Main {
         int dayNumber = Integer.parseInt(input1);
 
         switch(dayNumber) {
-            case 1:
+            case 1 ->
                 System.out.println("Monday");
-                break;
-            case 2:
+//                break;
+            case 2 ->
                 System.out.println("Tuesday");
-                break;
-            case 3:
+//                break;
+            case 3 ->
                 System.out.println("Wednesday");
-                break;
-            case 4:
+//                break;
+            case 4 ->
                 System.out.println("Thursday");
-                break;
-            case 5:
+//                break;
+            case 5 ->
                 System.out.println("Friday");
-                break;
-            case 6:
+//                break;
+            case 6 ->
                 System.out.println("Saturday");
-                break;
-            case 7:
+//                break;
+            case 7 ->
                 System.out.println("Sunday");
-                break;
-            default:
+//                break;
+            default ->
                 System.out.println("Invalid date");
         }
     }
@@ -183,10 +183,17 @@ public class Main {
 
         Scanner myObj = new Scanner(System.in);
         System.out.println("Enter a year");
-        String input1 = myObj.nextLine();
-        int yearNumber = Integer.parseInt(input1);
+        int yearNumber = 0;
+        while (myObj.hasNextInt() == false) {
+//            if (myObj.hasNextInt() == false ) {
+            System.out.println("Invalid input, please try again.");
+            myObj.next();
 
-        System.out.println((yearNumber % 4 == 0 && yearNumber % 100 != 0) || yearNumber % 400 == 0 ? "Année bissextile" : "Année non-bissextile");
+        }
+        yearNumber = myObj.nextInt();
+
+
+        System.out.println(((yearNumber % 4 == 0 && yearNumber % 100 != 0) || yearNumber % 400 == 0) && yearNumber >= 4 ? "Année bissextile" : "Année non-bissextile");
     }
 
     public static void exercice08() {
